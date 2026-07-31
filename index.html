@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mun Light Electronics Accessories Wholesaler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .zoom-container {
+            position: relative;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+        .zoom-container img {
+            transition: transform 0.1s ease-out;
+            transform-origin: center center;
+            will-change: transform, transform-origin;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans relative overflow-x-hidden min-h-screen">
+
+    <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- Top Info Strip -->
+    <div class="bg-amber-400 text-slate-950 text-xs font-semibold py-2 px-4 shadow-xs">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot mr-1"></i> 327, Tilak Marg, near khatu shyam mandir, behind gyan Mandir, Neemuch Chawni, Neemuch, Madhya Pradesh 458441</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock mr-1"></i> Open Daily: 9:00 AM - 9:00 PM</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:+919039421800" class="hover:underline"><i class="fa-solid fa-phone mr-1"></i> +91 9039421800</a>
+                <div class="flex items-center gap-2 border-l border-slate-900/20 pl-3">
+                    <a href="https://instagram.com" target="_blank" class="hover:text-amber-800"><i class="fa-brands fa-instagram text-sm"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="hover:text-amber-800"><i class="fa-brands fa-facebook text-sm"></i></a>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Navigation Bar -->
+    <nav class="bg-slate-900 text-white sticky top-0 z-40 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-amber-400 rounded-xl flex items-center justify-center text-slate-950 text-xl font-black shadow-inner">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <span class="text-lg sm:text-xl font-black tracking-wide block leading-none">MUN LIGHT</span>
+                    <span class="text-[10px] text-amber-400 uppercase font-bold tracking-widest">Electronics Accessories Wholesaler</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3 sm:gap-4">
+                <div class="hidden sm:block bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 text-xs">
+                    <i class="fa-solid fa-heart text-red-500 mr-1"></i> Favorites: <span id="fav-count" class="text-amber-400 font-bold">0</span>
+                </div>
+                <button onclick="toggleCartDrawer()" class="bg-amber-400 hover:bg-amber-500 text-slate-950 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 relative shadow-md transition-all">
+                    <i class="fa-solid fa-cart-shopping"></i> 
+                    <span class="hidden xs:inline">Order List</span>
+                    <span id="cart-badge" class="bg-slate-900 text-white text-[11px] font-bold px-2 py-0.5 rounded-full ml-1">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SHOP HERO & ABOUT SHOWCASE SECTION -->
+    <section class="bg-slate-900 text-white py-10 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-4 text-center lg:text-left">
+                    <span class="inline-block bg-amber-400/10 text-amber-400 border border-amber-400/20 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">Your Trusted Local Store</span>
+                    <h1 class="text-3xl sm:text-4xl font-black tracking-tight leading-tight">Complete Electronics Accessories Wholesaler in Neemuch</h1>
+                    <p class="text-slate-400 text-sm leading-relaxed">Visit Munlight, electrical and electronics for genuine material, home lighting, industrial lightings, modern electronics gadgets under one roof.</p>
+                    
+                    <div class="pt-2 flex flex-wrap gap-3 justify-center lg:justify-start">
+                        <a href="https://wa.me/919039421800" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs flex items-center gap-2 transition-colors shadow-md">
+                            <i class="fa-brands fa-whatsapp text-base"></i> Direct Store WhatsApp
+                        </a>                      
+                    </div>
+                </div>
+
+               <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div class="h-36 sm:h-44 rounded-2xl overflow-hidden border border-slate-800 bg-slate-800 relative group">
+                        <img src="https://lh3.googleusercontent.com/d/1JT-6IETcDAz4mllxcM2VG-IeguoGuDhq" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Shop Interior">
+                        <span class="absolute bottom-2 left-2 bg-slate-950/80 text-white text-[10px] font-bold px-2 py-0.5 rounded">Store Interior</span>
+                    </div>
+                    <div class="h-36 sm:h-44 rounded-2xl overflow-hidden border border-slate-800 bg-slate-800 relative group">
+                        <img src="https://lh3.googleusercontent.com/d/1pc8IcBPICM4Ys8SQkbvO_mRE-4oLOFZE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Gadgets Counter">
+                        <span class="absolute bottom-2 left-2 bg-slate-950/80 text-white text-[10px] font-bold px-2 py-0.5 rounded">Electronics</span>
+                    </div>
+                    <div class="h-36 sm:h-44 rounded-2xl overflow-hidden border border-slate-800 bg-slate-800 relative group col-span-2 sm:col-span-1">
+                        <img src="https://lh3.googleusercontent.com/d/1s2fBlD0RAkJfLjrOEp9FemPDHULBYpMK" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Electrical Stock">
+                        <span class="absolute bottom-2 left-2 bg-slate-950/80 text-white text-[10px] font-bold px-2 py-0.5 rounded">Gadgets</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-overlay" class="fixed inset-0 bg-black/50 z-50 invisible opacity-0 transition-all duration-300 flex justify-end" onclick="toggleCartDrawer()">
+        <div class="w-full max-w-md bg-white h-full shadow-2xl p-6 flex flex-col justify-between overflow-y-auto" onclick="event.stopPropagation()">
+            <div>
+                <div class="flex justify-between items-center border-b pb-4 mb-4">
+                    <h3 class="text-lg font-bold text-slate-900"><i class="fa-solid fa-cart-shopping text-amber-500 mr-2"></i>Store Order List</h3>
+                    <button onclick="toggleCartDrawer()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+                <div id="cart-items-list" class="space-y-4 divide-y divide-slate-100 max-h-[60vh] overflow-y-auto pr-1"></div>
+            </div>
+
+            <div class="border-t pt-4 bg-white sticky bottom-0 space-y-4">
+                <div class="flex justify-between items-center text-base font-bold text-slate-900">
+                    <span>Estimated Total:</span>
+                    <span>₹<span id="cart-total-price">0</span></span>
+                </div>
+
+                <button onclick="sendBulkWhatsAppOrder()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl tracking-wide flex items-center justify-center gap-2 transition-all shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Send Order Inquiry via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+   <!-- FULL SCREEN LIGHTBOX MODAL WITH SEMI-TRANSPARENT BLUR BACKDROP -->
+	<div id="lightbox-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-[9999] invisible opacity-0 transition-all duration-300 flex flex-col items-center justify-between p-4 select-none">
+		<div class="w-full flex justify-between items-center text-white z-10">
+			<span id="lightbox-counter" class="text-xs font-mono bg-slate-900/80 px-3 py-1 rounded-full border border-slate-700/80 shadow-md">1 / 1</span>
+			<div class="flex items-center gap-2">
+				<button onclick="zoomLightbox(0.2)" class="w-9 h-9 bg-slate-900/80 hover:bg-slate-800 rounded-full flex items-center justify-center text-white transition-colors border border-slate-700/60 shadow-md" title="Zoom In"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+				<button onclick="zoomLightbox(-0.2)" class="w-9 h-9 bg-slate-900/80 hover:bg-slate-800 rounded-full flex items-center justify-center text-white transition-colors border border-slate-700/60 shadow-md" title="Zoom Out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+				<button onclick="resetLightboxZoom()" class="w-9 h-9 bg-slate-900/80 hover:bg-slate-800 rounded-full flex items-center justify-center text-white transition-colors text-xs font-bold border border-slate-700/60 shadow-md" title="Reset Zoom">1:1</button>
+				<button onclick="closeLightbox()" class="w-9 h-9 bg-red-600/90 hover:bg-red-600 rounded-full flex items-center justify-center text-white transition-colors ml-2 shadow-lg"><i class="fa-solid fa-xmark text-lg"></i></button>
+			</div>
+		</div>
+
+		<div class="relative flex-1 w-full flex items-center justify-center overflow-hidden my-2 cursor-grab active:cursor-grabbing" id="lightbox-viewport" onmousedown="startLightboxPan(event)" onmousemove="doLightboxPan(event)" onmouseup="endLightboxPan()" onmouseleave="endLightboxPan()" ontouchstart="startLightboxPan(event)" ontouchmove="doLightboxPan(event)" ontouchend="endLightboxPan()">
+			<div id="lightbox-content-box" class="transition-transform duration-75 ease-out flex items-center justify-center w-full h-full"></div>
+
+			<button id="lightbox-btn-prev" onclick="navigateLightbox(-1)" class="absolute left-4 bg-slate-900/80 hover:bg-amber-400 hover:text-slate-950 text-white w-11 h-11 rounded-full flex items-center justify-center transition-colors border border-slate-700 shadow-xl"><i class="fa-solid fa-chevron-left text-lg"></i></button>
+			<button id="lightbox-btn-next" onclick="navigateLightbox(1)" class="absolute right-4 bg-slate-900/80 hover:bg-amber-400 hover:text-slate-950 text-white w-11 h-11 rounded-full flex items-center justify-center transition-colors border border-slate-700 shadow-xl"><i class="fa-solid fa-chevron-right text-lg"></i></button>
+		</div>
+
+		<p class="text-[11px] text-slate-300/80 bg-slate-900/60 px-3 py-1 rounded-full border border-slate-800/80 backdrop-blur-xs text-center">
+			<i class="fa-solid fa-hand-pointer mr-1"></i> Drag to pan zoomed view. Use +/- controls to adjust scale.
+		</p>
+	</div>
+    <!-- PRODUCT DETAILS & REVIEWS POPUP -->
+    <div id="details-modal" class="fixed inset-0 bg-black/60 z-50 invisible opacity-0 transition-all duration-300 flex items-center justify-center p-3 sm:p-4" onclick="closeDetailsModal()">
+        <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl p-4 sm:p-6 relative flex flex-col md:flex-row gap-6" onclick="event.stopPropagation()">
+            <button onclick="closeDetailsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 w-9 h-9 rounded-full flex items-center justify-center transition-colors z-20">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            
+            <div class="w-full md:w-1/2 flex flex-col justify-between space-y-3">
+                <div class="h-64 sm:h-80 bg-slate-950 border border-slate-200 rounded-xl overflow-hidden relative flex items-center justify-center group" id="modal-media-stage">
+                    <div id="modal-main-display" class="w-full h-full flex items-center justify-center"></div>
+
+                    <button id="stage-btn-prev" onclick="changeActiveMedia(-1)" class="absolute left-2 bg-slate-900/80 hover:bg-amber-400 hover:text-slate-950 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors shadow-md z-10"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button id="stage-btn-next" onclick="changeActiveMedia(1)" class="absolute right-2 bg-slate-900/80 hover:bg-amber-400 hover:text-slate-950 text-white w-9 h-9 rounded-full flex items-center justify-center transition-colors shadow-md z-10"><i class="fa-solid fa-chevron-right"></i></button>
+
+                    <button onclick="openFullScreenLightbox()" class="absolute top-3 right-3 bg-slate-950/80 hover:bg-amber-400 hover:text-slate-950 text-white w-8 h-8 rounded-lg flex items-center justify-center transition-colors z-10 text-xs" title="View Full Screen"><i class="fa-solid fa-expand"></i></button>
+                    <span id="media-counter-badge" class="absolute bottom-3 left-3 bg-slate-950/80 text-white text-[10px] font-mono px-2 py-1 rounded z-10">1 / 1</span>
+                </div>
+
+                <div id="modal-thumbnails-strip" class="flex gap-2 overflow-x-auto pb-1 max-w-full"></div>
+                
+                <div>
+                    <div class="flex items-center justify-between mb-1">
+                        <div>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block">Wholesale Price</span>
+                            <span class="text-3xl font-black text-slate-950 tracking-tight">₹<span id="modal-price">0</span></span>
+                            <span id="modal-mrp-wrapper" class="text-xs text-slate-400 line-through ml-2">MRP: ₹<span id="modal-mrp">0</span></span>
+                        </div>
+                        <span id="modal-status-badge" class="text-xs px-3 py-1 rounded-md font-bold uppercase tracking-wider">Available</span>
+                    </div>
+                    <p id="modal-moq-text" class="text-xs text-amber-700 font-bold bg-amber-50 border border-amber-200/80 p-2 rounded-lg mb-3 flex items-center gap-1.5">
+                        <i class="fa-solid fa-boxes-packing"></i> Min. Order Quantity: 1 unit
+                    </p>
+                    <div id="modal-action-wrapper" class="flex gap-2"></div>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 flex flex-col justify-between divide-y divide-slate-100">
+                <div class="pb-4">
+                    <span id="modal-category" class="text-[10px] bg-slate-100 text-slate-700 font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">Category</span>
+                    <h2 id="modal-title" class="text-xl sm:text-2xl font-black text-slate-950 mt-2 mb-1 leading-tight">Product Title</h2>
+                    <p class="text-xs text-slate-400 mb-3">Item Code: <span id="modal-id" class="font-mono bg-slate-50 border px-1.5 py-0.5 rounded">--</span></p>
+                    
+                    <div class="bg-slate-50/70 p-3 rounded-lg border border-dashed border-slate-200">
+                        <h4 class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1">Specifications & Features</h4>
+                        <p id="modal-details" class="text-xs text-slate-600 leading-relaxed max-h-[15vh] overflow-y-auto pr-1">Specifications details...</p>
+                    </div>
+                </div>
+
+                <div class="pt-4 space-y-3">
+                    <h3 class="text-sm font-bold text-slate-900 flex items-center justify-between">
+                        <span><i class="fa-solid fa-star text-amber-400 mr-1"></i> Customer Reviews</span>
+                        <span id="review-count-badge" class="text-xs font-normal text-slate-400">(0 reviews)</span>
+                    </h3>
+
+                    <div id="reviews-feed" class="max-h-36 overflow-y-auto space-y-2 pr-1 border border-slate-100 rounded-lg p-2.5 bg-slate-50/50">
+                        <p class="text-xs text-slate-400 text-center py-4">Loading item reviews...</p>
+                    </div>
+
+                    <form id="item-review-form" onsubmit="submitBoundReview(event)" class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-3">
+                        <h4 class="text-[11px] font-bold uppercase tracking-wider text-slate-700">Write a Review for this Item</h4>
+                        
+                        <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200">
+                            <span class="text-xs font-semibold text-slate-600">Your Rating:</span>
+                            <div id="star-rating-picker" class="flex gap-1 text-amber-400 text-lg cursor-pointer">
+                                <i class="fa-solid fa-star star-btn" onclick="setStarRating(1)" onmouseover="highlightStars(1)" onmouseleave="resetStarHighlight()"></i>
+                                <i class="fa-solid fa-star star-btn" onclick="setStarRating(2)" onmouseover="highlightStars(2)" onmouseleave="resetStarHighlight()"></i>
+                                <i class="fa-solid fa-star star-btn" onclick="setStarRating(3)" onmouseover="highlightStars(3)" onmouseleave="resetStarHighlight()"></i>
+                                <i class="fa-solid fa-star star-btn" onclick="setStarRating(4)" onmouseover="highlightStars(4)" onmouseleave="resetStarHighlight()"></i>
+                                <i class="fa-solid fa-star star-btn" onclick="setStarRating(5)" onmouseover="highlightStars(5)" onmouseleave="resetStarHighlight()"></i>
+                            </div>
+                            <input type="hidden" id="selected-star-val" value="5">
+                        </div>
+
+                        <input type="text" id="review-name" required placeholder="Your Name" class="w-full p-2 bg-white border border-slate-200 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-amber-400">
+
+                        <div class="relative">
+                            <textarea id="review-text" required rows="2" maxlength="150" oninput="updateCharCount(this)" placeholder="How was your experience with this item? (Max 150 chars)" class="w-full p-2 pr-12 bg-white border border-slate-200 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-amber-400"></textarea>
+                            <span id="char-counter" class="absolute bottom-2 right-2 text-[10px] text-slate-400 font-mono">150 left</span>
+                        </div>
+                        
+                        <button type="submit" id="review-submit-btn" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2 rounded-lg text-xs transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-xs"></i> Submit Review
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CATALOG SHOWROOM SECTION -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <div class="sticky top-[72px] z-30 bg-slate-50/90 backdrop-blur-md pt-2 pb-4 border-b border-slate-200/60 mb-6 flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div class="relative flex-1 w-full">
+                <i class="fa-solid fa-magnifying-glass absolute left-3 top-3.5 text-slate-400"></i>
+                <input type="text" id="search-input" oninput="resetToFirstPageAndFilter()" placeholder="Search electrical supplies, tools, appliances..." class="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-xs">
+            </div>
+            
+            <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                <div class="flex border rounded-lg bg-white p-1 border-slate-200 shadow-xs">
+                    <button id="view-grid-btn" onclick="switchLayoutView('grid')" class="w-10 h-10 rounded-md flex items-center justify-center bg-slate-100 border border-slate-200 text-slate-900 transition-all" title="Grid Layout">
+                        <i class="fa-solid fa-grip text-sm"></i>
+                    </button>
+                    <button id="view-list-btn" onclick="switchLayoutView('list')" class="w-10 h-10 rounded-md flex items-center justify-center text-slate-400 hover:text-slate-800 transition-all" title="List Layout">
+                        <i class="fa-solid fa-list text-sm"></i>
+                    </button>
+                </div>
+
+                <select id="category-filter" onchange="resetToFirstPageAndFilter()" class="bg-white border rounded-lg px-4 h-12 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 border-slate-200 flex-1 md:flex-initial min-w-[140px] shadow-xs">
+                    <option value="all">All Categories</option>
+                </select>
+                <button id="fav-toggle-btn" onclick="toggleFavFilter()" class="bg-white border text-slate-600 px-4 h-12 rounded-lg flex items-center gap-2 text-sm font-medium hover:bg-slate-50 border-slate-200 transition-colors shadow-xs">
+                    <i class="fa-solid fa-heart text-red-500"></i> <span class="hidden sm:inline">Favorites</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="showroom-grid" data-layout-mode="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 scroll-mt-24"></div>
+        
+        <div id="empty-state" class="hidden text-center py-16 text-slate-400">
+            <i class="fa-solid fa-cubes text-4xl mb-2"></i>
+            <p>No products matching your search criteria.</p>
+        </div>
+
+        <div class="mt-12 flex justify-center items-center gap-4 bg-white py-3 px-6 rounded-xl border max-w-xs mx-auto shadow-xs border-slate-200">
+            <button onclick="changePage(-1)" id="btn-prev-page" class="w-10 h-10 border rounded-lg flex items-center justify-center bg-slate-50 hover:bg-slate-100 disabled:opacity-40 border-slate-200 transition-colors"><i class="fa-solid fa-chevron-left text-sm"></i></button>
+            <div class="text-sm font-medium text-slate-600 whitespace-nowrap">Page <span id="current-page-display" class="font-bold text-slate-900">1</span> of <span id="total-pages-display" class="font-bold text-slate-900">1</span></div>
+            <button onclick="changePage(1)" id="btn-next-page" class="w-10 h-10 border rounded-lg flex items-center justify-center bg-slate-50 hover:bg-slate-100 disabled:opacity-40 border-slate-200 transition-colors"><i class="fa-solid fa-chevron-right text-sm"></i></button>
+        </div>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-slate-900 text-slate-300 mt-20 border-t border-slate-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-amber-400 rounded-lg flex items-center justify-center text-slate-950 font-black">
+                        <i class="fa-solid fa-bolt text-sm"></i>
+                    </div>
+                    <span class="text-lg font-black text-white tracking-wide">MUN LIGHT</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">Your neighborhood destination for high-quality electrical supplies, home wiring, smart fixtures, microcontrollers, and tech accessories in Neemuch.</p>
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-amber-400 hover:text-slate-950 flex items-center justify-center transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-amber-400 hover:text-slate-950 flex items-center justify-center transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="space-y-2 text-xs">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">Store Location</h4>
+                <p><i class="fa-solid fa-location-dot text-amber-400 mr-2"></i> 327, Tilak Marg, near khatu shyam mandir, behind gyan Mandir, Neemuch Chawni, Neemuch, Madhya Pradesh 458441</p>
+                <p><i class="fa-solid fa-phone text-amber-400 mr-2"></i> +91 9039421800</p>
+                <p><i class="fa-solid fa-clock text-amber-400 mr-2"></i> Open 7 Days: 9:00 AM - 9:00 PM</p>
+            </div>
+
+            <div class="rounded-xl overflow-hidden border border-slate-800 bg-slate-800 h-36 relative">
+                <a href="https://www.google.com/maps/place/Mun+light/@24.4580271,74.8641429,21z/data=!4m14!1m7!3m6!1s0x39667368892ea973:0xa938af9e55e2c00e!2sMun+light!8m2!3d24.4581429!4d74.8647313!16s%2Fg%2F11yj7ggxhh!3m5!1s0x39667368892ea973:0xa938af9e55e2c00e!8m2!3d24.4581429!4d74.8647313!16s%2Fg%2F11yj7ggxhh?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="block w-full h-full relative group">
+                    <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=500" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform" alt="Google Map Preview">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <span class="bg-slate-900/90 text-amber-400 border border-amber-400/30 text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg flex items-center gap-2">
+                            <i class="fa-solid fa-map-pin"></i> Open Google Maps
+                        </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+            © Mun Light Electricals Accessories Wholesaler. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP CHAT WIDGET SYSTEM -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+        <div id="chat-widget" class="hidden w-80 bg-white border border-slate-200 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 transition-all">
+            <div class="bg-slate-900 text-white p-4 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-question text-amber-400"></i>
+                    <div>
+                        <h4 class="font-bold text-sm">Store Product Inquiry</h4>
+                        <p class="text-[10px] text-amber-300">Ask us directly on WhatsApp</p>
+                    </div>
+                </div>
+                <button onclick="toggleChatWidget()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <div class="p-4 space-y-3">
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Select Product</label>
+                    <select id="chat-product-select" class="w-full p-2 bg-slate-50 border rounded-lg text-xs focus:ring-1 focus:ring-amber-400 focus:outline-none border-slate-200">
+                        <option value="__GENERAL__">General Inquiry (No Product)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1">Your Question Details</label>
+                    <textarea id="chat-message-text" rows="3" placeholder="Ask about product availability, prices, or specs..." class="w-full p-2.5 bg-slate-50 border rounded-lg text-xs focus:ring-1 focus:ring-amber-400 focus:outline-none border-slate-200"></textarea>
+                </div>
+                <button onclick="sendCustomChatInquiry()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 rounded-lg text-xs flex items-center justify-center gap-2 shadow-xs transition-colors">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> Send Question to Store
+                </button>
+            </div>
+        </div>
+        <button onclick="toggleChatWidget()" class="w-14 h-14 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-105 transition-all duration-200">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </button>
+    </div>
+
+    <!-- LINK TO EXTERNAL STORE JS LOGIC -->
+    <script src="store.js"></script>
+</body>
+</html>
