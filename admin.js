@@ -1,5 +1,5 @@
 
-// deno-lint-ignore-file no-unused-vars no-window no-window-prefix no-empty
+// deno-lint-ignore-file no-unused-vars
 const GOOGLE_SHEET_ID = "1efQ_LCxjLrIThXt0FBt4Z9DPNIX7bmvmNcFQVZf0EN8"; 
 const GOOGLE_SHEET_EDIT_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/edit?usp=sharing`;
 const REFRESH_STREAM_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv`;
@@ -10,7 +10,7 @@ const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwM8ID2p
 let authenticatedPasscode = ""; 
 let fullDataCache = [];
 let filteredAdminCache = [];
-let selectedItemIds = new Set();
+const selectedItemIds = new Set();
 
 // Admin Table Pagination
 const ADMIN_ITEMS_PER_PAGE = 15;
