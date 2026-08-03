@@ -113,8 +113,8 @@ async function loadSheetCategories() {
         customOpt.innerText = "➕ Create New Category...";
         selectElement.appendChild(customOpt);
 
-    } catch {
-        selectElement.innerHTML = `<option value="Kitchen Appliances">Kitchen Appliances</option><option value="Electrical Switches">Electrical Switches</option><option value="__CUSTOM__">➕ Cre[...]
+   } catch {
+        selectElement.innerHTML = '<option value="Kitchen Appliances">Kitchen Appliances</option><option value="Electrical Switches">Electrical Switches</option><option value="__CUSTOM__">➕ Create New Category...</option>';
     }
 }
 
@@ -424,7 +424,7 @@ async function handleBulkDelete() {
 
         showToast("Bulk delete completed!", "success");
         setTimeout(reloadPreview, 1200);
-    } catch (err) { showToast("Bulk delete failed.", "error"); }
+    } catch { showToast("Bulk delete failed.", "error"); }
 }
 
 function openEmailModal(title, price) {
