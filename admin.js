@@ -46,7 +46,7 @@ async function handleAdminLogin(e) {
             inputEl.className = "w-full p-3 bg-red-950/30 border-2 border-red-500 rounded-xl text-sm text-center text-red-200 tracking-widest focus:outline-none";
             document.getElementById('login-error-msg').classList.remove('hidden');
         }
-    } catch (err) {
+      } catch {
         showToast("Could not connect to authentication server.", "error");
     } finally {
         btn.disabled = false;
@@ -113,8 +113,8 @@ async function loadSheetCategories() {
         customOpt.innerText = "➕ Create New Category...";
         selectElement.appendChild(customOpt);
 
-    } catch(e) {
-        selectElement.innerHTML = `<option value="Kitchen Appliances">Kitchen Appliances</option><option value="Electrical Switches">Electrical Switches</option><option value="__CUSTOM__">➕ Create New Category...</option>`;
+    } catch {
+        selectElement.innerHTML = `<option value="Kitchen Appliances">Kitchen Appliances</option><option value="Electrical Switches">Electrical Switches</option><option value="__CUSTOM__">➕ Cre[...]
     }
 }
 
@@ -168,7 +168,7 @@ async function reloadPreview() {
         const csv = await res.text();
         fullDataCache = parseCSV(csv);
         resetAdminPaginationAndFilter();
-    } catch(e) {
+    } catch {
         tbody.innerHTML = `<tr><td colspan="8" class="p-8 text-center text-red-400">Failed to pull database. Check Sheet sharing settings.</td></tr>`;
     }
 }
@@ -370,7 +370,7 @@ async function handleProductSubmit(e) {
         showToast(isEditing ? "Item updated!" : "Item saved to Sheet!", "success");
         resetFormToCreateState();
         setTimeout(reloadPreview, 1200);
-    } catch (err) {
+    } catch {
         showToast("Network operation failed.", "error");
     } finally {
         btn.disabled = false;
@@ -389,7 +389,7 @@ async function deleteSingleProduct(productId) {
 
         showToast(`Item deleted!`, "success");
         setTimeout(reloadPreview, 1200);
-    } catch (err) { showToast("Could not delete item.", "error"); }
+    } catch  { showToast("Could not delete item.", "error"); }
 }
 
 function toggleRowSelection(productId, isChecked) {
@@ -460,7 +460,7 @@ async function handleSendEmailNotification(e) {
 
         showToast("Order invoice email sent successfully!", "success");
         closeEmailModal();
-    } catch (err) {
+    } catch  {
         showToast("Could not send email.", "error");
     } finally {
         btn.disabled = false;
