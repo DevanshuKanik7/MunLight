@@ -1,5 +1,4 @@
-// deno-lint-ignore-file no-unused-vars no-window no-window-prefix no-empty
-const WHATSAPP_NUMBER = "919039421800"; 
+// deno-lint-ignore-file no-unused-varsconst WHATSAPP_NUMBER = "919039421800"; 
 const GOOGLE_SHEET_ID = "1efQ_LCxjLrIThXt0FBt4Z9DPNIX7bmvmNcFQVZf0EN8"; 
 const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwM8ID2ppIXciDN1-SFM0lF_xvgVQEReyOHJGj0zQkC1aXHFXlBbioj2BwJER78sPmAPg/exec";
 
@@ -25,7 +24,7 @@ let dragStartX = 0, dragStartY = 0;
 
 let markedFavorites = JSON.parse(localStorage.getItem('shop_customer_favorites')) || [];
 let onlyShowFavs = false;
-let shoppingCart = {};
+const shoppingCart = {};
 
 const ITEMS_PER_PAGE = 10; 
 let currentPage = 1;
