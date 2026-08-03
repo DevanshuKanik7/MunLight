@@ -1,5 +1,3 @@
-*** Begin Patch
-*** Update File: store.js
 @@
 -const WHATSAPP_NUMBER = "919999999999";
 +// deno-lint-ignore-file no-unused-vars
@@ -27,7 +25,6 @@
 @@
 -window.addEventListener('DOMContentLoaded', loadInitialData);
 +globalThis.addEventListener('DOMContentLoaded', loadInitialData);
-*** End Patch
 
 const WHATSAPP_NUMBER = "919039421800"; 
 const GOOGLE_SHEET_ID = "1efQ_LCxjLrIThXt0FBt4Z9DPNIX7bmvmNcFQVZf0EN8"; 
