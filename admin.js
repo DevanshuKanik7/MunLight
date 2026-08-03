@@ -1,7 +1,4 @@
-*** Begin Patch
-*** Update File: admin.js
-@@
--const GOOGLE_SHEET_ID = "1efQ_LCxjLrIThXt0FBt4Z9DPNIX7bmvmNcFQVZf0EN8"; 
+
 +// deno-lint-ignore-file no-unused-vars
 +const GOOGLE_SHEET_ID = "1efQ_LCxjLrIThXt0FBt4Z9DPNIX7bmvmNcFQVZf0EN8"; 
 @@
@@ -121,7 +118,6 @@
 -    window.scrollTo({ top: 0, behavior: 'smooth' });
 +    globalThis.scrollTo({ top: 0, behavior: 'smooth' });
  }
-*** End Patch
 
 const GOOGLE_SHEET_ID = "1efQ_LCxjLrIThXt0FBt4Z9DPNIX7bmvmNcFQVZf0EN8"; 
 const GOOGLE_SHEET_EDIT_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/edit?usp=sharing`;
