@@ -1,4 +1,6 @@
-// deno-lint-ignore-file no-unused-varsconst WHATSAPP_NUMBER = "919039421800"; 
+// deno-lint-ignore-file no-unused-vars
+
+const WHATSAPP_NUMBER = "919039421800";
 const GOOGLE_SHEET_ID = "1efQ_LCxjLrIThXt0FBt4Z9DPNIX7bmvmNcFQVZf0EN8"; 
 const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwM8ID2ppIXciDN1-SFM0lF_xvgVQEReyOHJGj0zQkC1aXHFXlBbioj2BwJER78sPmAPg/exec";
 
@@ -37,7 +39,7 @@ async function loadInitialData() {
         if (!response.ok) throw new Error("Failed to load catalog");
         parseCsvToCatalog(await response.text());
         populateChatDropdown();
-    } catch (e) {
+    } catch {
         console.warn("Using default fallback items due to fetch error:", e.message);
         catalogItems = defaultItems;
         populateChatDropdown();
@@ -52,7 +54,7 @@ async function loadInitialData() {
         } else {
             generateFallbackCategories();
         }
-    } catch (e) {
+    } catch {
         console.warn("Could not load categories sheet tab, extracting from main catalog instead.");
         generateFallbackCategories();
     }
@@ -70,7 +72,7 @@ async function fetchStoreReviews() {
             allStoreReviews = await res.json();
             applyFilters();
         }
-    } catch (e) {}
+    } catch {}
 }
 
 function isVideoUrl(url) {
@@ -114,7 +116,7 @@ function populateCategoriesFromCsv(csvText) {
     if (!filterDropdown) return;
 
     const lines = csvText.split(/\r?\n/).filter(line => line.trim() !== '');
-    let categoriesList = [];
+    const categoriesList = [];
 
     lines.forEach(category => {
         const cleanCat = category.replace(/^"|"$/g, '').trim();
@@ -182,9 +184,9 @@ function parseCsvToCatalog(text) {
         const rawPhotoUrl = obj['photo url'] || obj['photourl'] || obj['image'] || '';
 
         if(id && title) {
-            let stock = parseInt(rawStock);
+            const stock = parseInt(rawStock);
             if(isNaN(stock)) stock = 999;
-            let min = parseInt(rawMin);
+            const min = parseInt(rawMin);
             if(isNaN(min) || min < 1) min = 1;
 
             catalogItems.push({
@@ -610,8 +612,8 @@ function updateCartUI() {
     if(!listContainer) return;
     
     listContainer.innerHTML = '';
-    let totalItemCount = 0;
-    let grandTotal = 0;
+    const totalItemCount = 0;
+    const grandTotal = 0;
 
     Object.keys(shoppingCart).forEach(id => {
         const product = catalogItems.find(p => p.id === id);
@@ -680,7 +682,7 @@ function renderItemReviewsFeed(productId) {
 }
 
 function showToast(message, type = 'success') {
-    let container = document.getElementById('toast-container');
+    const container = document.getElementById('toast-container');
     if (!container) {
         container = document.createElement('div');
         container.id = 'toast-container';
@@ -767,8 +769,8 @@ function sendBulkWhatsAppOrder() {
     const keys = Object.keys(shoppingCart);
     if (keys.length === 0) { alert("Please select items!"); return; }
 
-    let messageText = `⚡ *WHOLESALE ORDER INQUIRY - MUN LIGHT* ⚡\n\n`;
-    let runningTotal = 0;
+    const messageText = `⚡ *WHOLESALE ORDER INQUIRY - MUN LIGHT* ⚡\n\n`;
+    const runningTotal = 0;
 
     keys.forEach((id, index) => {
         const item = catalogItems.find(p => p.id === id);
@@ -794,7 +796,7 @@ function toggleFav(id) {
 function toggleFavFilter() { onlyShowFavs = !onlyShowFavs; resetToFirstPageAndFilter(); }
 function resetToFirstPageAndFilter() { currentPage = 1; applyFilters(); }
 
-let currentSelectedRating = 5;
+const currentSelectedRating = 5;
 function setStarRating(rating) { currentSelectedRating = rating; document.getElementById('selected-star-val').value = rating; highlightStars(rating); }
 function highlightStars(count) {
     document.querySelectorAll('#star-rating-picker .star-btn').forEach((star, index) => {
@@ -823,7 +825,7 @@ function sendCustomChatInquiry() {
         return;
     }
 
-    let msgPayload = `💬 *MUN LIGHT ELECTRICALS INQUIRY* 💬\n\n`;
+    const msgPayload = `💬 *MUN LIGHT ELECTRICALS INQUIRY* 💬\n\n`;
     if (productId !== "__GENERAL__") {
         const product = catalogItems.find(p => p.id === productId);
         if (product) {
@@ -840,3 +842,9 @@ function sendCustomChatInquiry() {
 }
 
 globalThis.addEventListener('DOMContentLoaded', loadInitialData);
+globalThis.addToCart = addToCart;
+globalThis.changeQty = changeQty;
+globalThis.toggleFav = toggleFav;
+globalThis.toggleFavFilter = toggleFavFilter;
+globalThis.switchLayoutView = switchLayoutView;
+globalThis.openDetailsModal = openDetailsModal;
