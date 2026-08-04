@@ -7,14 +7,14 @@ const CATEGORIES_STREAM_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_S
 
 const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwM8ID2ppIXciDN1-SFM0lF_xvgVQEReyOHJGj0zQkC1aXHFXlBbioj2BwJER78sPmAPg/exec";
 
-let authenticatedPasscode = ""; 
-let fullDataCache = [];
-let filteredAdminCache = [];
+const authenticatedPasscode = ""; 
+const fullDataCache = [];
+const filteredAdminCache = [];
 const selectedItemIds = new Set();
 
 // Admin Table Pagination
 const ADMIN_ITEMS_PER_PAGE = 15;
-let adminCurrentPage = 1;
+const adminCurrentPage = 1;
 
 async function handleAdminLogin(e) {
     e.preventDefault();
@@ -307,7 +307,7 @@ function editProduct(productId) {
     submitBtn.className = "w-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold py-3 rounded-lg text-xs uppercase tracking-wider flex items-center justify-center gap-2";
     submitBtn.innerHTML = `<i class="fa-solid fa-arrows-rotate"></i> Update Product in Sheet`;
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    globalThis.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function resetFormToCreateState() {
@@ -518,3 +518,11 @@ function parseCSV(text) {
     }
     return list;
 }
+
+globalThis.addToCart = addToCart;
+globalThis.changeQty = changeQty;
+globalThis.toggleFav = toggleFav;
+globalThis.toggleFavFilter = toggleFavFilter;
+globalThis.sendBulkWhatsAppOrder = sendBulkWhatsAppOrder;
+globalThis.openChatWithProduct = openChatWithProduct;
+globalThis.submitBoundReview = submitBoundReview;
