@@ -9,26 +9,26 @@ const defaultItems = [
     { id: "KITCH-001", title: "Coffee machine", category: "Kitchen Appliances", price: "193", retailPrice: "300", mediaList: [{ type: "image", url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500" }], details: "Coffee maker device.", stockQty: 100, minQty: 1 }
 ];
 
-let catalogItems = [];
-let filteredItemsCache = []; 
-let allStoreReviews = []; 
-let currentActiveProductId = null;
-let currentActiveMediaList = [];
-let currentMediaIndex = 0;
+const catalogItems = [];
+const filteredItemsCache = []; 
+const allStoreReviews = []; 
+const currentActiveProductId = null;
+const currentActiveMediaList = [];
+const currentMediaIndex = 0;
 
 // Lightbox Pan/Zoom State
-let lightboxZoomScale = 1;
-let lightboxPanX = 0, lightboxPanY = 0;
-let isDraggingLightbox = false;
-let dragStartX = 0, dragStartY = 0;
+const lightboxZoomScale = 1;
+const lightboxPanX = 0, lightboxPanY = 0;
+const isDraggingLightbox = false;
+const dragStartX = 0, dragStartY = 0;
 
-let markedFavorites = JSON.parse(localStorage.getItem('shop_customer_favorites')) || [];
-let onlyShowFavs = false;
+const markedFavorites = JSON.parse(localStorage.getItem('shop_customer_favorites')) || [];
+const onlyShowFavs = false;
 const shoppingCart = {};
 
 const ITEMS_PER_PAGE = 10; 
-let currentPage = 1;
-let currentLayoutView = "grid"; 
+const currentPage = 1;
+const currentLayoutView = "grid"; 
 
 async function loadInitialData() {
     // 1. Fetch Main Catalog First
@@ -737,7 +737,7 @@ async function submitBoundReview(e) {
         setStarRating(5);
 
         showToast("Review submitted successfully!", "success");
-    } catch (err) {
+    } catch {
         showToast("Could not submit review.", "error");
     } finally {
         submitBtn.disabled = false;
@@ -782,7 +782,7 @@ function sendBulkWhatsAppOrder() {
     });
 
     messageText += `───────────────────\n🛒 *Total Order Value:* ₹${runningTotal.toLocaleString()}\n\nPlease confirm stock and billing invoice.`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageText)}`, '_blank');
+    globalThis.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageText)}`, '_blank');
 }
 
 function toggleFav(id) {
@@ -834,9 +834,9 @@ function sendCustomChatInquiry() {
     }
 
     msgPayload += `📝 *Question:* ${message}`;
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msgPayload)}`, '_blank');
+    globalThis.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msgPayload)}`, '_blank');
     document.getElementById('chat-message-text').value = '';
     toggleChatWidget();
 }
 
-window.addEventListener('DOMContentLoaded', loadInitialData);
+globalThis.addEventListener('DOMContentLoaded', loadInitialData);
