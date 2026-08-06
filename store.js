@@ -840,11 +840,3 @@ function sendCustomChatInquiry() {
     document.getElementById('chat-message-text').value = '';
     toggleChatWidget();
 }
-
-globalThis.addEventListener('DOMContentLoaded', loadInitialData);
-globalThis.addToCart = addToCart;
-globalThis.changeQty = changeQty;
-globalThis.toggleFav = toggleFav;
-globalThis.toggleFavFilter = toggleFavFilter;
-globalThis.switchLayoutView = switchLayoutView;
-globalThis.openDetailsModal = openDetailsModal;
