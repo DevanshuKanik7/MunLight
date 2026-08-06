@@ -518,11 +518,3 @@ function parseCSV(text) {
     }
     return list;
 }
-
-globalThis.addToCart = addToCart;
-globalThis.changeQty = changeQty;
-globalThis.toggleFav = toggleFav;
-globalThis.toggleFavFilter = toggleFavFilter;
-globalThis.sendBulkWhatsAppOrder = sendBulkWhatsAppOrder;
-globalThis.openChatWithProduct = openChatWithProduct;
-globalThis.submitBoundReview = submitBoundReview;
