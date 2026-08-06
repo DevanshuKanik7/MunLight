@@ -72,7 +72,7 @@ async function fetchStoreReviews() {
             allStoreReviews = await res.json();
             applyFilters();
         }
-    } catch {}
+    } catch { // intentionally kept empty}
 }
 
 function isVideoUrl(url) {
@@ -168,7 +168,7 @@ function parseCsvToCatalog(text) {
     const headers = splitRow(lines[0]).map(h => clean(h).toLowerCase());
     catalogItems = [];
 
-    for(let i = 1; i < lines.length; i++) {
+    for(const i = 1; i < lines.length; i++) {
         if(!lines[i].trim()) continue;
         const cols = splitRow(lines[i]);
         const obj = {};
