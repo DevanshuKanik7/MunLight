@@ -127,25 +127,25 @@ function handleCategorySelection(select) {
 }
 
 function autoSuggestProductId() {
-    let cat = document.getElementById('add-category-select').value;
+    const cat = document.getElementById('add-category-select').value;
     if(cat === "__CUSTOM__") cat = document.getElementById('add-custom-category').value.trim();
     
-    let prefix = "ITEM";
+    const prefix = "ITEM";
     if (cat && cat.length >= 3) {
         prefix = cat.substring(0, 4).toUpperCase().replace(/[^A-Z]/g, '');
     }
 
-    let highestNum = 0;
+    const highestNum = 0;
     fullDataCache.forEach(p => {
         if (p.id.toUpperCase().startsWith(prefix)) {
-            let parts = p.id.split('-');
-            let num = parseInt(parts[parts.length - 1]);
+            const parts = p.id.split('-');
+            const num = parseInt(parts[parts.length - 1]);
             if (!isNaN(num) && num > highestNum) highestNum = num;
         }
     });
 
-    let nextNum = String(highestNum + 1).padStart(3, '0');
-    let suggestedId = `${prefix}-${nextNum}`;
+    const nextNum = String(highestNum + 1).padStart(3, '0');
+    const suggestedId = `${prefix}-${nextNum}`;
 
     const inputEl = document.getElementById('add-product-id');
     inputEl.value = suggestedId;
@@ -479,7 +479,7 @@ function parseCSV(text) {
     const headers = splitRow(lines[0]).map(h => clean(h).toLowerCase());
     const list = [];
 
-    for(let i=1; i<lines.length; i++) {
+    for(const i=1; i<lines.length; i++) {
         if(!lines[i].trim()) continue;
         const cols = splitRow(lines[i]);
         const obj = {};
@@ -495,9 +495,9 @@ function parseCSV(text) {
         const rawMedia = obj['photo url'] || obj['photourl'] || obj['image'] || '';
 
         if(id && title) {
-            let stock = parseInt(rawStock);
+            const stock = parseInt(rawStock);
             if(isNaN(stock)) stock = 999;
-            let min = parseInt(rawMin);
+            const min = parseInt(rawMin);
             if(isNaN(min) || min < 1) min = 1;
 
             const firstUrl = rawMedia.split(',')[0] ? rawMedia.split(',')[0].trim() : '';
